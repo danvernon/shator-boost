@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -25,7 +26,9 @@ const Layout = ({ isHomePage, children }) => {
         <Header title={title} />
       </header>
       <main>{children}</main>
-      <footer>{/* <Footer /> */}</footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
