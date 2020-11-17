@@ -131,7 +131,7 @@ const IndexPage = ({ location }) => {
             <span>Starts from 23€</span>
             <DetailLink to="/coaching">See details</DetailLink>
           </BoxText>
-          <BoxImage className="image">
+          <BoxImage className="image" style={{ maxWidth: 300 }}>
             <Img fluid={imgCoaching} />
           </BoxImage>
         </Box>
@@ -146,7 +146,7 @@ const IndexPage = ({ location }) => {
             <span>Starts from 42€</span>
             <DetailLink to="/arena-rating">See details</DetailLink>
           </BoxText>
-          <BoxImage className="image">
+          <BoxImage className="image" style={{ maxWidth: 350 }}>
             <Img fluid={imgArenaRating} />
           </BoxImage>
         </Box>
@@ -161,7 +161,7 @@ const IndexPage = ({ location }) => {
             <span>Starts from 129€</span>
             <DetailLink to="/visious-saddle">See details</DetailLink>
           </BoxText>
-          <BoxImage className="image">
+          <BoxImage className="image" style={{ maxWidth: 350 }}>
             <Img fluid={imgVisiousSaddle} />
           </BoxImage>
         </Box>
@@ -176,7 +176,7 @@ const IndexPage = ({ location }) => {
             <span>Starts from 1999€</span>
             <DetailLink to="/rank-one">See details</DetailLink>
           </BoxText>
-          <BoxImage className="image">
+          <BoxImage className="image" style={{ maxWidth: 350 }}>
             <Img fluid={imgRankOne} />
           </BoxImage>
         </Box>
