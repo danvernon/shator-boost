@@ -1,9 +1,18 @@
+const path = require(`path`)
+
 module.exports = {
   plugins: [
     {
       resolve: `gatsby-source-wordpress-experimental`,
       options: {
-        url: process.env.WPGRAPHQL_URL || `https://shator-boost.com/graphql`,
+        url: process.env.WPGRAPHQL_URL || `http://shatorboost.local/graphql`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
       },
     },
     `gatsby-transformer-sharp`,
@@ -17,9 +26,10 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/shator-icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
   ],
 }
