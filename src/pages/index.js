@@ -88,7 +88,7 @@ const IndexPage = ({ location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Shator Boost" />
+      <SEO title="Elite WoW Boost" />
       <HeaderImageContainer>
         <div className="content">
           <Container>

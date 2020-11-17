@@ -28,7 +28,7 @@ const Header = ({ title }) => {
       <Container>
         <Link to="/">
           <h1>
-            <Img fixed={logoData} />
+            <Img fixed={logoData} alt={title} />
           </h1>
         </Link>
         <Links>
