@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Container from "react-bootstrap/Container"
 import styled from "styled-components"
 
@@ -7,12 +8,106 @@ const Footer = () => {
     <FooterContainer>
       <Container>
         <Trustpilot />
+        <FooterMain>
+          <div>
+            <p>
+              All material that is not distinctive of Shator-boost’s own
+              personal brand is registered and of property of Blizzard
+              Entertainment, Inc. World of WarcraftTM is a trademark of Blizzard
+              Entertainment inc. All rights on related materials, logos and
+              characters respectively belongs to Blizzard Entertainment inc.
+              Shator-boost is in no way associated with Blizzard Entertainment
+              inc.
+            </p>
+            <p>Copyright © 2020 Shator-Boost</p>
+          </div>
+          <div>
+            <h5>Services</h5>
+            <ul>
+              <li>
+                <Link to="/gladiator-boost">Gladiator</Link>
+              </li>
+              <li>
+                <Link to="/coaching">Coaching</Link>
+              </li>
+              <li>
+                <Link to="/arena-rating">Arena Rating</Link>
+              </li>
+              <li>
+                <Link to="/visious-saddle">Visious Saddle</Link>
+              </li>
+              <li>
+                <Link to="/rank-one">Rank One</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <Link to="/contact-us">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/faq">FAQ</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <ul>
+              <li>
+                <Link to="/terms">Terms of Service</Link>
+              </li>
+              <li>
+                <Link to="/privacy">Privacy Policy</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5>Icons</h5>
+          </div>
+        </FooterMain>
       </Container>
     </FooterContainer>
   )
 }
 
 export default Footer
+
+const FooterMain = styled.div`
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+  grid-gap: 50px;
+  padding-top: 100px;
+
+  p {
+    font-size: 12px;
+  }
+
+  h5 {
+    font-weight: 500;
+    margin-top: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: #fff;
+      font-size: 14px;
+      opacity: 0.7;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        color: #fff;
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+  }
+`
 
 const FooterContainer = styled.div`
   padding: 50px 0;

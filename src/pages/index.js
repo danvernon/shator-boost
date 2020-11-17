@@ -93,7 +93,6 @@ const IndexPage = ({ location }) => {
         <div className="content">
           <Container>
             <h1>Shator Boost</h1>
-            {/* <h2>Elite WoW Boost</h2> */}
             <p>
               Our team consists of Multi Rank 1 Gladiators and Tournament
               players that have been successfully boosting since 2008. Our goal
@@ -187,7 +186,7 @@ const IndexPage = ({ location }) => {
 
 export default IndexPage
 
-const HeaderImageContainer = styled.div`
+export const HeaderImageContainer = styled.div`
   align-items: center;
   box-shadow: 0 1px 5px 0 #4a4a4a;
   display: flex;
@@ -221,7 +220,7 @@ const HeaderImageContainer = styled.div`
   }
 `
 
-const HeaderImg = styled(Img)`
+export const HeaderImg = styled(Img)`
   bottom: 0;
   left: 0;
   max-height: 400px;
@@ -282,7 +281,7 @@ const DetailLink = styled(Link)`
   height: 40px;
   justify-content: center;
   padding-top: 2px;
-  transition: all ease-in-out 0.25s;
+  transition: all ease-in-out 0.2s;
   width: 150px;
 
   &:hover {

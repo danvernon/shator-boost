@@ -86,6 +86,7 @@ const Links = styled.ul`
     font-size: 14px;
     opacity: 0.7;
     padding-top: 2px;
+    transition: all ease-in-out 0.2s;
 
     &:hover {
       color: #fff;
