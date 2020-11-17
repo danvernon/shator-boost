@@ -94,11 +94,16 @@ const IndexPage = ({ location }) => {
           <Container>
             <h1>Shator Boost</h1>
             <p>
-              Our team consists of Multi Rank 1 Gladiators and Tournament
-              players that have been successfully boosting since 2008. Our goal
-              is very simple, we are here to get you to your dream rating in
-              World of Warcraft in a quick and efficient manner. Save yourself
-              from the countless hours of grinding, and let our pro’s help you.
+              Our team consists of Multi Rank 1 Gladiators, Tournament players
+              and Blizzcon Winner that have been successfully boosting since
+              2008.
+            </p>
+            <br />
+            <p>
+              Our goal is very simple, we are here to get you to your dream
+              rating in World of Warcraft in a quick and efficient manner. Save
+              yourself from the countless hours of grinding, and let our pro’s
+              help you.
             </p>
           </Container>
         </div>
