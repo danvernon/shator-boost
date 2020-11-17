@@ -52,7 +52,8 @@ export default Header
 const HeaderContainer = styled.div`
   align-items: center;
   background: #171717;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #333;
+  // box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   height: 100px;
   position: relative;
