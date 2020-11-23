@@ -29,6 +29,7 @@ const GladiatorBoostPage = ({ location }) => {
       }
     `
   )
+
   const siteTitle = data.site.siteMetadata.title
   const imageData = data.header.childImageSharp.fluid
 
@@ -53,7 +54,3 @@ const GladiatorBoostPage = ({ location }) => {
 }
 
 export default GladiatorBoostPage
-
-// const PageContainer = styled.div`
-//   padding: 100px 0;
-// `

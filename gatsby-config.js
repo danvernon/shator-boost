@@ -1,6 +1,13 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: `Gatsby Woocommerce`,
+    description: `Ecommerce store buit with gatsby and wordpress`,
+    basePath: "/",
+    author: "sagarnasit",
+  },
+
   plugins: [
     {
       resolve: `gatsby-source-wordpress-experimental`,

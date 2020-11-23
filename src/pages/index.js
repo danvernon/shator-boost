@@ -156,14 +156,14 @@ const IndexPage = ({ location }) => {
         </Box>
         <Box>
           <BoxText className="text">
-            <h3>Visious Saddle</h3>
+            <h3>Vicious Saddle</h3>
             <p>
               There are great deal of other benefits that you can get by buying
               this service instead of just getting the tokens click on button to
               learn more.
             </p>
             <span>Starts from 129€</span>
-            <DetailLink to="/visious-saddle">See details</DetailLink>
+            <DetailLink to="/vicious-saddle-prod">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>
             <Img fluid={imgVisiousSaddle} />
@@ -206,7 +206,7 @@ export const HeaderImageContainer = styled.div`
     z-index: 1;
 
     h1 {
-      margin-bottom; 20px;
+      margin-bottom: 20px;
       margin-top: 0;
       text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     }
@@ -221,6 +221,21 @@ export const HeaderImageContainer = styled.div`
       margin: 0 auto;
       max-width: 600px;
       opacity: 0.9;
+    }
+
+    .woocommerce-product__price {
+      margin-bottom: 15px;
+      margin-top: 15px;
+
+      span {
+        font-size: 20px;
+        font-weight: 800;
+      }
+    }
+
+    button {
+      margin: 0 auto;
+      width: 150px;
     }
   }
 `

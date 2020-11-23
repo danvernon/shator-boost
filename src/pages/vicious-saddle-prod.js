@@ -9,7 +9,7 @@ import How from "../components/how"
 
 import { HeaderImageContainer, HeaderImg } from "./index"
 
-const ArenaRatingPage = ({ location }) => {
+const VisiousSaddlePage = ({ location }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -35,15 +35,15 @@ const ArenaRatingPage = ({ location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Arena Rating" />
+      <SEO title="Vicious Saddle" />
       <HeaderImageContainer>
         <div className="content">
           <Container>
-            <h1>Arena Rating</h1>
+            <h1>Vicious Saddle</h1>
             <p>
-              Our boosters are able to get you to the rating you always dreamt
-              about. You can play with the booster (Selfplay boost) or let the
-              booster play on your account (Pilot boost).
+              This is the safest option to choose Our booster/s will play with
+              you until you get the vicious saddle. It is our most popular boost
+              method.
             </p>
           </Container>
         </div>
@@ -58,20 +58,20 @@ const ArenaRatingPage = ({ location }) => {
               you until you get to the desired rating that you bought in 2v2 or
               3v3.
             </p>
-            <DetailLink to="/arena-rating-boost">Buy Now</DetailLink>
-            <h4>What is selfplay arena boost?</h4>
+            <DetailLink to="/vicious-saddle">Buy Now</DetailLink>
+            <h4>What is selfplay vicious saddle boost?</h4>
             <h6>No risk at all</h6>
             <p>
               We guarantee that there won’t be any risk when buying selfplay
-              arena rating boost. It is 100% safe since you are playing on your
-              own account with the booster/s.
+              vicious saddle boost. It is 100% safe since you are playing on
+              your own account with the booster/s.
             </p>
             <h6>Benefits of selfplay boost</h6>
             <p>
               You will be able to learn a lot from our booster. Adapting to
               their gameplay and the strategies will make you a much better
-              player and you will be more satisfied when buying the arena rating
-              boost. You will be playing with professionals that will be
+              player and you will be more satisfied when buying the vicious
+              saddle boost. You will be playing with professionals that will be
               patient.
             </p>
             <h6>No Requirements</h6>
@@ -85,13 +85,13 @@ const ArenaRatingPage = ({ location }) => {
             <h2>Pilot</h2>
             <p>
               For the Pilot boost Our booster will play on your account to get
-              your desired rating in 2v2 or 3v3.
+              you the vicious saddle.
             </p>
             <DetailLink to="/">Buy Now</DetailLink>
-            <h4>What is pilot arena boost?</h4>
+            <h4>What is pilot vicious saddle boost?</h4>
             <h6>For this service we don’t offer refunds</h6>
             <p>
-              Pilot arena rating boost has a lowered price since it is easier
+              Pilot vicious saddle boost has a lowered price since it is easier
               and faster for us to do it. There is an around 30% chance of
               getting banned even with precaution of using VPN. You should have
               that in mind when buying this type of boost since there will be no
@@ -105,9 +105,9 @@ const ArenaRatingPage = ({ location }) => {
             </p>
             <h6>Account share</h6>
             <p>
-              To receive the pilot arena rating boost we will need your account
-              information so our booster would log in and play on it until he
-              reaches your desired rating.
+              To receive the pilot vicious saddle boost we will need your
+              account information so our booster would log in and play on it
+              until he reaches your desired rating.
             </p>
           </div>
         </Content>
@@ -117,7 +117,7 @@ const ArenaRatingPage = ({ location }) => {
   )
 }
 
-export default ArenaRatingPage
+export default VisiousSaddlePage
 
 const Content = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
