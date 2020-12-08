@@ -16,8 +16,6 @@ const AddToCartButton = props => {
     setShowCart(true)
   }
 
-  console.log(props)
-
   return (
     <>
       <button
