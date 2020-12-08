@@ -50,7 +50,7 @@ module.exports = {
         // much time was required to fetch and process the data.
         // Defaults to true.
         verbose: true,
-        apiVersion: "2020-10",
+        apiVersion: "2020-07",
       },
     },
     `gatsby-transformer-sharp`,
