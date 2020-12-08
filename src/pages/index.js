@@ -195,9 +195,10 @@ export const HeaderImageContainer = styled.div`
   align-items: center;
   box-shadow: 0 1px 5px 0 #4a4a4a;
   display: flex;
-  height: 400px;
+  min-height: 400px;
   justify-content: center;
   margin-bottom: 50px;
+  padding: 50px 0;
   position: relative;
 
   .content {
@@ -243,7 +244,7 @@ export const HeaderImageContainer = styled.div`
 export const HeaderImg = styled(Img)`
   bottom: 0;
   left: 0;
-  max-height: 400px;
+  /* max-height: 400px; */
   position: absolute !important;
   right: 0;
   opacity: 0.2;

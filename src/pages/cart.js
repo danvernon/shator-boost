@@ -35,7 +35,7 @@ const CartPage = () => {
   return (
     <Layout>
       <SEO title="Cart" />
-      <HeaderImageContainer style={{ height: 300 }}>
+      <HeaderImageContainer style={{ minHeight: 300 }}>
         <div className="content">
           <Container>
             <div className="woocommerce-product__wrapper">

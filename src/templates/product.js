@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
+import { Range } from "rc-slider"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -86,6 +87,21 @@ const ProductDetail = ({
     setUpdate(Math.random())
   }
 
+  const marks = {
+    0: "1500",
+    1: "1600",
+    2: "1700",
+    3: "1800",
+    4: "1900",
+    5: "2000",
+    6: "2100",
+  }
+
+  const handleChange = props => {
+    setFirst(marks[props[0]])
+    setSecond(marks[props[1]])
+  }
+
   const searchTerm =
     attributes.length === 2
       ? `${first} / ${second}`
@@ -118,53 +134,86 @@ const ProductDetail = ({
         <span>€{Number(price).toFixed(2)}</span>
       </p>
       {attributes && attributes[0]?.name !== "Title" && (
-        <div
-          style={{
-            display: "grid",
-            gridGap: 15,
-            gridTemplateColumns: "repeat(2, 180px)",
-            justifyContent: "center",
-            marginBottom: 15,
-          }}
-        >
-          {attributes?.slice(0, 1).map((attribute, index) => (
-            <div key={index}>
-              <Form.Label>{attribute.name}</Form.Label>
-              <Form.Control as="select" onChange={e => handleFirstChange(e)}>
-                {attribute.values?.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Form.Control>
+        <>
+          {attributes.length > 2 ? (
+            <div style={{ marginTop: 40 }}>
+              <Form.Label>Rating</Form.Label>
+              <Range
+                min={0}
+                max={6}
+                step={1}
+                dots={true}
+                defaultValue={[0, 1]}
+                marks={marks}
+                onChange={props => handleChange(props)}
+              />
+              {attributes?.slice(2, 3).map((attribute, index) => (
+                <div
+                  key={index}
+                  style={{
+                    maxWidth: 200,
+                    margin: "50px auto 30px",
+                    textAlgin: "center",
+                  }}
+                >
+                  <Form.Label>{attribute.name}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={e => handleThirdChange(e)}
+                  >
+                    {attribute.values?.map((option, index) => (
+                      <option key={index} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </div>
+              ))}
             </div>
-          ))}
-          {attributes?.slice(1, 2).map((attribute, index) => (
-            <div key={index}>
-              <Form.Label>{attribute.name}</Form.Label>
-              <Form.Control as="select" onChange={e => handleSecondChange(e)}>
-                {attribute.values?.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Form.Control>
+          ) : (
+            <div
+              style={{
+                display: "grid",
+                gridGap: 15,
+                gridTemplateColumns: "repeat(2, 180px)",
+                justifyContent: "center",
+                marginBottom: 15,
+              }}
+            >
+              {attributes?.slice(0, 1).map((attribute, index) => (
+                <div key={index}>
+                  <Form.Label>{attribute.name}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={e => handleFirstChange(e)}
+                  >
+                    {attribute.values?.map((option, index) => (
+                      <option key={index} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </div>
+              ))}
+
+              {attributes?.slice(1, 2).map((attribute, index) => (
+                <div key={index}>
+                  <Form.Label>{attribute.name}</Form.Label>
+                  <Form.Control
+                    as="select"
+                    onChange={e => handleSecondChange(e)}
+                  >
+                    {attribute.values?.map((option, index) => (
+                      <option key={index} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </div>
+              ))}
             </div>
-          ))}
-          {attributes.length > 2 &&
-            attributes?.slice(2, 3).map((attribute, index) => (
-              <div key={index}>
-                <Form.Label>{attribute.name}</Form.Label>
-                <Form.Control as="select" onChange={e => handleThirdChange(e)}>
-                  {attribute.values?.map((option, index) => (
-                    <option key={index} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </Form.Control>
-              </div>
-            ))}
-        </div>
+          )}
+        </>
       )}
       <AddToCartButton product={{ id, name, price }} />
     </div>

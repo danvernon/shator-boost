@@ -5,6 +5,8 @@ import Footer from "./footer"
 
 import ContextProvider from "../provider/ContextProvider"
 
+import "rc-slider/assets/index.css"
+
 const Layout = ({ isHomePage, children }) => {
   return (
     <ContextProvider>
