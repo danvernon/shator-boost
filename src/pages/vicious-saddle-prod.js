@@ -40,11 +40,11 @@ const VisiousSaddlePage = ({ location }) => {
         <div className="content">
           <Container>
             <h1>Vicious Saddle</h1>
-            <p>
+            {/* <p>
               This is the safest option to choose Our booster/s will play with
               you until you get the vicious saddle. It is our most popular boost
               method.
-            </p>
+            </p> */}
           </Container>
         </div>
         <HeaderImg fluid={imageData} />
@@ -87,7 +87,9 @@ const VisiousSaddlePage = ({ location }) => {
               For the Pilot boost Our booster will play on your account to get
               you the vicious saddle.
             </p>
-            <DetailLink to="/">Buy Now</DetailLink>
+            <DetailLink to="https://discord.gg/jNFDjzx" target="_blank">
+              Join Discord
+            </DetailLink>
             <h4>What is pilot vicious saddle boost?</h4>
             <h6>For this service we don’t offer refunds</h6>
             <p>

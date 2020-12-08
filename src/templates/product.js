@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -18,38 +19,27 @@ import AddToCartButton from "../components/addToCart"
 import { HeaderImageContainer, HeaderImg } from "../pages/index"
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    wpProduct(id: { eq: $id }) {
-      ... on WpSimpleProduct {
+  query($handle: String!) {
+    shopifyProduct(handle: { eq: $handle }) {
+      id
+      shopifyId
+      title
+      variants {
         id
-        name
-        description
-        regularPrice
-        shortDescription
-        slug
+        price
+        title
+        shopifyId
       }
-      ... on WpVariableProduct {
-        id
-        id
+      options {
         name
-        description
-        shortDescription
-        slug
-        attributes {
-          nodes {
-            id
-            label
-            name
-            options
-            variation
-          }
-        }
-        variations {
-          nodes {
-            id
-            regularPrice
-            name
-          }
+        values
+      }
+      description
+      descriptionHtml
+      handle
+      priceRange {
+        minVariantPrice {
+          amount
         }
       }
     }
@@ -73,11 +63,12 @@ const ProductDetail = ({
   description,
   variations,
 }) => {
-  const [first, setFirst] = useState(attributes?.nodes[0].options[0])
-  const [second, setSecond] = useState(attributes?.nodes[1].options[0])
+  const [first, setFirst] = useState(attributes[0]?.values[0])
+  const [second, setSecond] = useState(attributes[1]?.values[0])
+  const [third, setThird] = useState(attributes[2]?.values[0])
   const [update, setUpdate] = useState(undefined)
   const [productId, setProductId] = useState(
-    variations ? variations.nodes[0].id : simpleId
+    variations ? variations[0].shopifyId : simpleId
   )
 
   const handleFirstChange = event => {
@@ -90,21 +81,31 @@ const ProductDetail = ({
     setUpdate(Math.random())
   }
 
-  const searchTerm = `${name} - ${first}, ${second}`
+  const handleThirdChange = event => {
+    setThird(event.target.value)
+    setUpdate(Math.random())
+  }
 
-  var result = variations?.nodes.find(obj => {
-    return obj.name === searchTerm
+  const searchTerm =
+    attributes.length === 2
+      ? `${first} / ${second}`
+      : attributes.length === 3
+      ? `${first} / ${second} / ${third}`
+      : ""
+
+  var result = variations?.find(obj => {
+    return obj.title === searchTerm
   })
 
   useEffect(() => {
     if (update) {
-      setProductId(result.id)
+      setProductId(result.shopifyId)
     }
   }, [result, update])
 
   const id = result ? productId : simpleId
 
-  const price = result ? result.regularPrice : regPrice
+  const price = result ? result.price : regPrice
 
   return (
     <div className="woocommerce-product__detail">
@@ -114,9 +115,9 @@ const ProductDetail = ({
         dangerouslySetInnerHTML={{ __html: description }}
       />
       <p className="woocommerce-product__price">
-        <span>{price}</span>
+        <span>€{Number(price).toFixed(2)}</span>
       </p>
-      {attributes && (
+      {attributes && attributes[0]?.name !== "Title" && (
         <div
           style={{
             display: "grid",
@@ -126,11 +127,11 @@ const ProductDetail = ({
             marginBottom: 15,
           }}
         >
-          {attributes.nodes?.slice(0, 1).map((attribute, index) => (
+          {attributes?.slice(0, 1).map((attribute, index) => (
             <div key={index}>
-              <Form.Label>{attribute.label}</Form.Label>
+              <Form.Label>{attribute.name}</Form.Label>
               <Form.Control as="select" onChange={e => handleFirstChange(e)}>
-                {attribute.options?.map((option, index) => (
+                {attribute.values?.map((option, index) => (
                   <option key={index} value={option}>
                     {option}
                   </option>
@@ -138,11 +139,11 @@ const ProductDetail = ({
               </Form.Control>
             </div>
           ))}
-          {attributes.nodes?.slice(1, 2).map((attribute, index) => (
+          {attributes?.slice(1, 2).map((attribute, index) => (
             <div key={index}>
-              <Form.Label>{attribute.label}</Form.Label>
+              <Form.Label>{attribute.name}</Form.Label>
               <Form.Control as="select" onChange={e => handleSecondChange(e)}>
-                {attribute.options?.map((option, index) => (
+                {attribute.values?.map((option, index) => (
                   <option key={index} value={option}>
                     {option}
                   </option>
@@ -150,6 +151,19 @@ const ProductDetail = ({
               </Form.Control>
             </div>
           ))}
+          {attributes.length > 2 &&
+            attributes?.slice(2, 3).map((attribute, index) => (
+              <div key={index}>
+                <Form.Label>{attribute.name}</Form.Label>
+                <Form.Control as="select" onChange={e => handleThirdChange(e)}>
+                  {attribute.values?.map((option, index) => (
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </Form.Control>
+              </div>
+            ))}
         </div>
       )}
       <AddToCartButton product={{ id, name, price }} />
@@ -157,28 +171,26 @@ const ProductDetail = ({
   )
 }
 
-const Product = ({ location, data: { wpProduct: product, header } }) => {
+const Product = ({ location, data: { shopifyProduct: product, header } }) => {
   const imageData = header.childImageSharp.fluid
 
-  // console.log(product)
+  const paragraphs = product.descriptionHtml.split("</p>")
+  const firstParagraph = paragraphs[0] + "</p>"
+
   return (
     <Layout>
-      <SEO location={location} title={product.name} />
+      <SEO location={location} title={product.title} />
       <HeaderImageContainer>
         <div className="content">
           <Container>
             <div className="woocommerce-product__wrapper">
               <ProductDetail
-                attributes={product.attributes}
-                simpleId={product.id}
-                description={product.description}
-                regPrice={
-                  product.regularPrice
-                    ? product.regularPrice
-                    : `${product.variations.nodes[0].regularPrice}+`
-                }
-                name={product.name}
-                variations={product.variations}
+                attributes={product.options}
+                simpleId={product.variants[0].shopifyId}
+                description={firstParagraph}
+                regPrice={product.priceRange.minVariantPrice.amount}
+                name={product.title}
+                variations={product.variants}
               />
             </div>
           </Container>
@@ -186,17 +198,8 @@ const Product = ({ location, data: { wpProduct: product, header } }) => {
         <HeaderImg fluid={imageData} />
       </HeaderImageContainer>
       <Container>
-        {product.shortDescription && (
-          <p
-            style={{
-              borderBottom: "1px solid rgba(255,255,255,0.1)",
-              margin: "0 auto 30px",
-              maxWidth: 600,
-              paddingBottom: 30,
-            }}
-            className="woocommerce-product__description"
-            dangerouslySetInnerHTML={{ __html: product.shortDescription }}
-          />
+        {paragraphs.length > 2 && (
+          <Content dangerouslySetInnerHTML={{ __html: paragraphs.slice(1) }} />
         )}
         <How />
       </Container>
@@ -205,3 +208,23 @@ const Product = ({ location, data: { wpProduct: product, header } }) => {
 }
 
 export default Product
+
+const Content = styled.div`
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto 30px;
+  max-width: 600px;
+  padding-bottom: 30px;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  p {
+    opacity: 0.7;
+  }
+`

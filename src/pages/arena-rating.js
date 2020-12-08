@@ -87,7 +87,9 @@ const ArenaRatingPage = ({ location }) => {
               For the Pilot boost Our booster will play on your account to get
               your desired rating in 2v2 or 3v3.
             </p>
-            <DetailLink to="/">Buy Now</DetailLink>
+            <DetailLink to="https://discord.gg/jNFDjzx" target="_blank">
+              Join Discord
+            </DetailLink>
             <h4>What is pilot arena boost?</h4>
             <h6>For this service we don’t offer refunds</h6>
             <p>

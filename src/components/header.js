@@ -1,10 +1,24 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext } from "react"
+import reduce from "lodash/reduce"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import { Container, Nav, Navbar } from "react-bootstrap"
 import styled from "styled-components"
 
+import StoreContext from "./context/StoreContext"
+
+const useQuantity = () => {
+  const {
+    store: { checkout },
+  } = useContext(StoreContext)
+  const items = checkout ? checkout.lineItems : []
+  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+  return [total !== 0, total]
+}
+
 const Header = ({ title }) => {
+  const [hasItems, quantity] = useQuantity()
+
   const data = useStaticQuery(
     graphql`
       query {
@@ -21,24 +35,6 @@ const Header = ({ title }) => {
     `
   )
 
-  // const [cartItems, setCartItems] = useState([])
-  const [sum, setSum] = useState(0)
-
-  useEffect(() => {
-    let items = !localStorage.getItem("cart")
-      ? null
-      : JSON.parse(localStorage.getItem("cart"))
-
-    if (null != items) {
-      // setCartItems(items)
-
-      const maths = !localStorage.getItem("cart")
-        ? null
-        : items.reduce((a, b) => +a + +b.qty, 0)
-      setSum(maths)
-    }
-  }, [setSum])
-
   const logoData = data.logo.childImageSharp.fixed
 
   return (
@@ -53,16 +49,19 @@ const Header = ({ title }) => {
             <Nav className="mr-auto"></Nav>
             <Links>
               <Link to="/gladiator-boost" className="nav-link">
-                Gladiator Boost
+                Gladiator
               </Link>
               <Link to="/coaching" className="nav-link">
                 Coaching
               </Link>
               <Link to="/arena-rating" className="nav-link">
-                Rating Boost
+                Arena Rating
+              </Link>
+              <Link to="/vicious-saddle-prod" className="nav-link">
+                Vicious Saddle
               </Link>
               <Link to="/rank-one-account" className="nav-link">
-                R1 Boost
+                Rank One
               </Link>
               <Link to="/faq" className="nav-link">
                 FAQ
@@ -74,8 +73,9 @@ const Header = ({ title }) => {
                 id="woocommerce-cart"
                 className="woocommerce__header-cart-link nav-link"
                 to="/cart"
+                style={{ opacity: 1, fontWeight: 600 }}
               >
-                Cart ({sum})
+                Cart {hasItems && <>({quantity})</>}
               </Link>
             </Links>
           </Navbar.Collapse>
@@ -126,7 +126,7 @@ const Links = styled(Nav)`
   padding: 0;
 
   a {
-    color: #fff;
+    color: #fff !important;
     font-size: 14px;
     opacity: 0.7;
     padding: 0 !important;

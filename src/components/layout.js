@@ -1,35 +1,23 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ isHomePage, children }) => {
-  const {
-    wp: {
-      generalSettings: { title },
-    },
-  } = useStaticQuery(graphql`
-    query LayoutQuery {
-      wp {
-        generalSettings {
-          title
-          description
-        }
-      }
-    }
-  `)
+import ContextProvider from "../provider/ContextProvider"
 
+const Layout = ({ isHomePage, children }) => {
   return (
-    <div className="global-wrapper" data-is-root-path={isHomePage}>
-      <header className="global-header">
-        <Header title={title} />
-      </header>
-      <main>{children}</main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <ContextProvider>
+      <div className="global-wrapper" data-is-root-path={isHomePage}>
+        <header className="global-header">
+          <Header title={"Shator Boost"} />
+        </header>
+        <main>{children}</main>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </ContextProvider>
   )
 }
 

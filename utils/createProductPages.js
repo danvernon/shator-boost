@@ -1,56 +1,28 @@
 const productTemplate = require.resolve("../src/templates/product.js")
-const cartTemplate = require.resolve("../src/templates/cart.js")
-const chunk = require("lodash/chunk")
 
 module.exports = async ({ actions, graphql, basePath }) => {
   const result = await graphql(`
     query {
-      allWpProduct {
-        nodes {
-          id
-          slug
+      allShopifyProduct {
+        edges {
+          node {
+            handle
+          }
         }
       }
     }
   `)
 
-  const products = result.data.allWpProduct.nodes
+  const products = result.data.allShopifyProduct.edges
 
   // Create single page for each product.
-  products.forEach(product => {
+  products.forEach(({ node }) => {
     actions.createPage({
-      path: basePath + product.slug,
+      path: basePath + node.handle,
       component: productTemplate,
       context: {
-        id: product.id,
+        handle: node.handle,
       },
     })
-  })
-
-  // // Create paginated list of products.
-  // const perPage = 6
-  // const listPages = chunk(products, perPage)
-  // const totalArchivePages = listPages.length
-
-  // listPages.forEach((archiveProduts, index) => {
-  //   const page = index + 1
-  //   actions.createPage({
-  //     path: page === 1 ? basePath : basePath + page,
-  //     component: archiveTemplate,
-  //     context: {
-  //       products: archiveProduts,
-  //       pageInfo: {
-  //         basePath: basePath,
-  //         previousPage: page - 1,
-  //         nextPage: page == totalArchivePages ? 0 : page + 1,
-  //       },
-  //     },
-  //   })
-  // })
-
-  // Create cart page.
-  actions.createPage({
-    path: basePath + "cart",
-    component: cartTemplate,
   })
 }

@@ -1,44 +1,45 @@
-import React from "react"
-import { navigate } from "gatsby"
+import React, { useContext, useState } from "react"
+import { Link } from "gatsby"
 
-function addToLocalStorage(e, product, qty = 1) {
-  document.getElementById("woocommerce-cart").classList.add("shake")
-
-  setTimeout(function () {
-    document.getElementById("woocommerce-cart").classList.remove("shake")
-  }, 500)
-
-  let products = !localStorage.getItem("cart")
-    ? []
-    : JSON.parse(localStorage.getItem("cart"))
-
-  let match = false
-  products.map(p => {
-    if (p.id === product.id) {
-      p.qty += qty
-      match = true
-    }
-    return p
-  })
-
-  if (!match) {
-    product.qty = qty
-    products = [...products, product]
-  }
-
-  localStorage.setItem("cart", JSON.stringify(products))
-  navigate("/cart")
-}
+import StoreContext from "./context/StoreContext"
 
 const AddToCartButton = props => {
+  const [showCart, setShowCart] = useState(false)
+  const {
+    addVariantToCart,
+    store: { adding },
+  } = useContext(StoreContext)
+
+  const handleAddToCart = () => {
+    setShowCart(false)
+    addVariantToCart(props.product.id, 1)
+    setShowCart(true)
+  }
+
+  console.log(props)
+
   return (
     <>
       <button
-        onClick={e => addToLocalStorage(e, props.product)}
+        onClick={handleAddToCart}
         className="add-to-cart"
+        disabled={adding}
       >
         Add to Cart
       </button>
+      {showCart && (
+        <div style={{ marginTop: 20 }}>
+          <p>
+            Item Added -{" "}
+            <Link
+              to="/cart"
+              style={{ color: "#fff", textDecoration: "underline" }}
+            >
+              View Cart
+            </Link>
+          </p>
+        </div>
+      )}
     </>
   )
 }
