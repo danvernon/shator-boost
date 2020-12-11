@@ -76,9 +76,12 @@ export default Footer
 
 const FooterMain = styled.div`
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
   grid-gap: 50px;
   /* padding-top: 100px; */
+
+  @media (min-width: 728px) {
+    grid-template-columns: 4fr 1fr 1fr 1fr 1fr;
+  }
 
   p {
     font-size: 12px;
