@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
-import { Range } from "rc-slider"
+import Slider from "rc-slider"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
@@ -95,18 +95,20 @@ const ProductDetail = ({
     4: "1900",
     5: "2000",
     6: "2100",
+    7: "2200",
+    8: "2300",
+    9: "2400",
   }
 
   const handleChange = props => {
-    setFirst(marks[props[0]])
-    setSecond(marks[props[1]])
+    setFirst(marks[props])
   }
 
   const searchTerm =
     attributes.length === 2
       ? `${first} / ${second}`
-      : attributes.length === 3
-      ? `${first} / ${second} / ${third}`
+      : attributes.length === 1
+      ? `${first}`
       : ""
 
   var result = variations?.find(obj => {
@@ -118,6 +120,8 @@ const ProductDetail = ({
       setProductId(result.shopifyId)
     }
   }, [result, update])
+
+  console.log({ id }, { result })
 
   const id = result ? productId : simpleId
 
@@ -133,42 +137,21 @@ const ProductDetail = ({
       <p className="woocommerce-product__price">
         <span>€{Number(price).toFixed(2)}</span>
       </p>
+
       {attributes && attributes[0]?.name !== "Title" && (
         <>
-          {attributes.length > 2 ? (
-            <div style={{ marginTop: 40 }}>
+          {attributes[0]?.name === "Desired Rating" ? (
+            <div style={{ margin: "40px 0 50px" }}>
               <Form.Label>Rating</Form.Label>
-              <Range
+              <Slider
                 min={0}
-                max={6}
+                max={9}
                 step={1}
                 dots={true}
-                defaultValue={[0, 1]}
+                defaultValue={0}
                 marks={marks}
                 onChange={props => handleChange(props)}
               />
-              {attributes?.slice(2, 3).map((attribute, index) => (
-                <div
-                  key={index}
-                  style={{
-                    maxWidth: 200,
-                    margin: "50px auto 30px",
-                    textAlgin: "center",
-                  }}
-                >
-                  <Form.Label>{attribute.name}</Form.Label>
-                  <Form.Control
-                    as="select"
-                    onChange={e => handleThirdChange(e)}
-                  >
-                    {attribute.values?.map((option, index) => (
-                      <option key={index} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </Form.Control>
-                </div>
-              ))}
             </div>
           ) : (
             <div
@@ -195,7 +178,6 @@ const ProductDetail = ({
                   </Form.Control>
                 </div>
               ))}
-
               {attributes?.slice(1, 2).map((attribute, index) => (
                 <div key={index}>
                   <Form.Label>{attribute.name}</Form.Label>
