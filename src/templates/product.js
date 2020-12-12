@@ -101,14 +101,15 @@ const ProductDetail = ({
   }
 
   const handleChange = props => {
-    setFirst(marks[props])
+    setThird(marks[props])
+    setUpdate(Math.random())
   }
 
   const searchTerm =
     attributes.length === 2
       ? `${first} / ${second}`
       : attributes.length === 1
-      ? `${first}`
+      ? `${third}`
       : ""
 
   var result = variations?.find(obj => {
@@ -120,8 +121,6 @@ const ProductDetail = ({
       setProductId(result.shopifyId)
     }
   }, [result, update])
-
-  console.log({ id }, { result })
 
   const id = result ? productId : simpleId
 
