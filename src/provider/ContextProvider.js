@@ -6,8 +6,8 @@ import Context from "../components/context/StoreContext"
 
 const client = Client.buildClient(
   {
-    storefrontAccessToken: process.env.SHOPIFY_ACCESS_TOKEN,
-    domain: `${process.env.SHOP_NAME}.myshopify.com`,
+    storefrontAccessToken: "ed5b188ec201787d0242abe61b19ed83",
+    domain: `shator-boost.myshopify.com`,
   },
   fetch
 )
