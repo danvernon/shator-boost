@@ -195,11 +195,15 @@ export const HeaderImageContainer = styled.div`
   align-items: center;
   box-shadow: 0 1px 5px 0 #4a4a4a;
   display: flex;
-  min-height: 400px;
+  min-height: 200px;
   justify-content: center;
   margin-bottom: 50px;
   padding: 50px 0;
   position: relative;
+
+  @media (min-width: 728px) {
+    min-height: 300px;
+  }
 
   .content {
     position: relative;
@@ -255,10 +259,14 @@ const Box = styled.div`
   align-items: center;
   display: grid;
   grid-gap: 50px;
-  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
   max-width: 800px;
-  padding: 50px 0;
+  padding: 25px 0;
+
+  @media (min-width: 728px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px 0;
+  }
 
   &:nth-child(even) {
     .text {
@@ -272,8 +280,21 @@ const Box = styled.div`
 `
 
 const BoxText = styled.div`
+  @media (max-width: 728px) {
+    order: 2;
+    text-align: center;
+
+    a {
+      margin: 0 auto;
+    }
+  }
+
   h3 {
     font-weight: 600;
+
+    @media (max-width: 728px) {
+      margin: 0;
+    }
   }
 
   p {

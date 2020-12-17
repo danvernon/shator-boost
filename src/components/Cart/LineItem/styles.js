@@ -3,11 +3,15 @@ import styled from "@emotion/styled"
 export const Wrapper = styled.div`
   display: flex;
   display: grid;
-  grid-template-columns: 1fr 1fr 150px 70px;
+  /* grid-template-columns: 1fr 1fr 150px 70px; */
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
+
+  @media (min-width: 728px) {
+    grid-template-columns: 1fr 1fr 150px 70px;
+  }
 
   button {
     background: transparent;
@@ -17,7 +21,7 @@ export const Wrapper = styled.div`
     opacity: 0.7;
     min-width: 0;
     padding: 0;
-    width: 70px;
+    width: min-content;
 
     &:hover {
       opacity: 1;

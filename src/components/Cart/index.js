@@ -29,7 +29,9 @@ const Cart = () => {
         }}
       >
         <h3 style={{ marginBottom: 10, marginTop: 0 }}>Total</h3>
-        <p style={{ fontSize: 18, opacity: 1 }}>$ {checkout.totalPrice}</p>
+        <p style={{ fontSize: 18, marginBottom: 15, opacity: 1 }}>
+          $ {checkout.totalPrice}
+        </p>
         <br />
         <button
           onClick={handleCheckout}

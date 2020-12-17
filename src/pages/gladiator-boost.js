@@ -52,7 +52,7 @@ const GladiatorBoostPage = ({ location }) => {
       </HeaderImageContainer>
       <Container>
         <Content>
-          <div>
+          <ContentInner>
             <h2>Selfplay</h2>
             <p>
               This is the safest option to choose Our booster/s will play with
@@ -83,8 +83,8 @@ const GladiatorBoostPage = ({ location }) => {
               boost to join our discord server where you will be contacted by
               our manager.
             </p>
-          </div>
-          <div>
+          </ContentInner>
+          <ContentInner>
             <h2>Pilot</h2>
             <p>
               For the Pilot Gladiator boost Our booster will play on your
@@ -113,8 +113,8 @@ const GladiatorBoostPage = ({ location }) => {
               information so our booster would log in and play on it until he
               reaches Gladiator.
             </p>
-          </div>
-          <div>
+          </ContentInner>
+          <ContentInner>
             <h2>Account</h2>
             <p>
               Our booster will create a completely new account. He will play on
@@ -138,7 +138,7 @@ const GladiatorBoostPage = ({ location }) => {
               and fill the info on the checkout page we will contact you on
               discord.
             </p>
-          </div>
+          </ContentInner>
         </Content>
         <How />
       </Container>
@@ -151,10 +151,14 @@ export default GladiatorBoostPage
 const Content = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(3, 400px);
   justify-content: center;
-  padding-bottom: 50px;
+  padding-bottom: 25px;
+
+  @media (min-width: 728px) {
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, 400px);
+    padding-bottom: 50px;
+  }
 
   h4 {
     color: #cca63f;
@@ -172,6 +176,14 @@ const Content = styled.div`
 
   p {
     opacity: 0.7;
+  }
+`
+
+const ContentInner = styled.div`
+  @media (max-width: 728px) {
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 `
 

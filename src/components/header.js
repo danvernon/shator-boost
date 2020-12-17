@@ -117,6 +117,10 @@ const HeaderContainer = styled(Container)`
       transform: translate3d(4px, 0, 0);
     }
   }
+
+  .navbar-toggler {
+    min-width: auto;
+  }
 `
 
 const Links = styled(Nav)`

@@ -124,10 +124,14 @@ export default VisiousSaddlePage
 const Content = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: grid;
-  grid-gap: 100px;
-  grid-template-columns: repeat(2, 400px);
+  grid-gap: 25px;
   justify-content: center;
   padding-bottom: 50px;
+
+  @media (min-width: 728px) {
+    grid-gap: 100px;
+    grid-template-columns: repeat(2, 400px);
+  }
 
   h4 {
     color: #cca63f;

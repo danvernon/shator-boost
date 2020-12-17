@@ -57,12 +57,16 @@ export default How
 const HowContainer = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: grid;
-  grid-gap: 50px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
   justify-content: center;
   margin-top: 50px;
   padding-bottom: 50px;
   text-align: center;
+
+  @media (min-width: 728px) {
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   p {
     margin: 0;

@@ -82,11 +82,6 @@ const ProductDetail = ({
     setUpdate(Math.random())
   }
 
-  const handleThirdChange = event => {
-    setThird(event.target.value)
-    setUpdate(Math.random())
-  }
-
   const marks = {
     0: "1500",
     1: "1600",
@@ -153,15 +148,7 @@ const ProductDetail = ({
               />
             </div>
           ) : (
-            <div
-              style={{
-                display: "grid",
-                gridGap: 15,
-                gridTemplateColumns: "repeat(2, 180px)",
-                justifyContent: "center",
-                marginBottom: 15,
-              }}
-            >
+            <Atrributes>
               {attributes?.slice(0, 1).map((attribute, index) => (
                 <div key={index}>
                   <Form.Label>{attribute.name}</Form.Label>
@@ -192,7 +179,7 @@ const ProductDetail = ({
                   </Form.Control>
                 </div>
               ))}
-            </div>
+            </Atrributes>
           )}
         </>
       )}
@@ -256,5 +243,17 @@ const Content = styled.div`
 
   p {
     opacity: 0.7;
+  }
+`
+
+const Atrributes = styled.div`
+  display: grid;
+  grid-gap: 15px;
+  justify-content: center;
+  margin-bottom: 15px;
+  width: 100%;
+
+  @media (min-width: 728px) {
+    grid-template-columns: repeat(2, 180px);
   }
 `
