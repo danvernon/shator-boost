@@ -58,9 +58,12 @@ const GladiatorBoostPage = ({ location }) => {
               This is the safest option to choose Our booster/s will play with
               you until you get your Gladiator title and Gladiator mount.
             </p>
-            <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
-              Join Discord
-            </DetailLink>
+            <ContentInnerDetails>
+              <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
+                Join Discord
+              </DetailLink>
+              <DetailPrice>€899.99</DetailPrice>
+            </ContentInnerDetails>
             <h4>What is selfplay gladiator boost?</h4>
             <h6>No risk at all</h6>
             <p>
@@ -90,9 +93,12 @@ const GladiatorBoostPage = ({ location }) => {
               For the Pilot Gladiator boost Our booster will play on your
               account to get you Gladiator Title and mount.
             </p>
-            <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
-              Join Discord
-            </DetailLink>
+            <ContentInnerDetails>
+              <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
+                Join Discord
+              </DetailLink>
+              <DetailPrice>€599.99</DetailPrice>
+            </ContentInnerDetails>
             <h4>What is pilot gladiator boost?</h4>
             <h6>For this service we don’t offer refunds</h6>
             <p>
@@ -121,7 +127,10 @@ const GladiatorBoostPage = ({ location }) => {
               that account until he reaches Gladiator. Once the order is
               finished you will receive account info.
             </p>
-            <DetailLink to="/gladiator-account">Buy Now</DetailLink>
+            <ContentInnerDetails>
+              <DetailLink to="/gladiator-account">Buy Now</DetailLink>
+              <DetailPrice>€899.99</DetailPrice>
+            </ContentInnerDetails>
             <h4>What is gladiator account boost?</h4>
             <h6>Risk of getting banned</h6>
             <p>
@@ -176,6 +185,10 @@ const Content = styled.div`
 
   p {
     opacity: 0.7;
+
+    @media (min-width: 728px) {
+      min-height: 100px;
+    }
   }
 `
 
@@ -185,6 +198,18 @@ const ContentInner = styled.div`
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
+`
+
+const ContentInnerDetails = styled.div`
+  align-items: center;
+  display: flex;
+`
+
+const DetailPrice = styled.span`
+  color: rgb(244, 135, 51);
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
 `
 
 const DetailLink = styled(Link)`

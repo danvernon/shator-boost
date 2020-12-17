@@ -58,7 +58,10 @@ const VisiousSaddlePage = ({ location }) => {
               you until you get to the desired rating that you bought in 2v2 or
               3v3.
             </p>
-            <DetailLink to="/vicious-saddle">Buy Now</DetailLink>
+            <ContentInnerDetails>
+              <DetailLink to="/vicious-saddle">Buy Now</DetailLink>
+              <DetailPrice>€159.99</DetailPrice>
+            </ContentInnerDetails>
             <h4>What is selfplay vicious saddle boost?</h4>
             <h6>No risk at all</h6>
             <p>
@@ -87,9 +90,12 @@ const VisiousSaddlePage = ({ location }) => {
               For the Pilot boost Our booster will play on your account to get
               you the vicious saddle.
             </p>
-            <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
-              Join Discord
-            </DetailLink>
+            <ContentInnerDetails>
+              <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
+                Join Discord
+              </DetailLink>
+              <DetailPrice>€129.99</DetailPrice>
+            </ContentInnerDetails>
             <h4>What is pilot vicious saddle boost?</h4>
             <h6>For this service we don’t offer refunds</h6>
             <p>
@@ -149,7 +155,23 @@ const Content = styled.div`
 
   p {
     opacity: 0.7;
+
+    @media (min-width: 728px) {
+      min-height: 80px;
+    }
   }
+`
+
+const ContentInnerDetails = styled.div`
+  align-items: center;
+  display: flex;
+`
+
+const DetailPrice = styled.span`
+  color: rgb(244, 135, 51);
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 20px;
 `
 
 const DetailLink = styled(Link)`
