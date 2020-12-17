@@ -58,7 +58,7 @@ const GladiatorBoostPage = ({ location }) => {
               This is the safest option to choose Our booster/s will play with
               you until you get your Gladiator title and Gladiator mount.
             </p>
-            <DetailLink to="https://discord.gg/jNFDjzx" target="_blank">
+            <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
               Join Discord
             </DetailLink>
             <h4>What is selfplay gladiator boost?</h4>
@@ -90,7 +90,7 @@ const GladiatorBoostPage = ({ location }) => {
               For the Pilot Gladiator boost Our booster will play on your
               account to get you Gladiator Title and mount.
             </p>
-            <DetailLink to="https://discord.gg/jNFDjzx" target="_blank">
+            <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
               Join Discord
             </DetailLink>
             <h4>What is pilot gladiator boost?</h4>

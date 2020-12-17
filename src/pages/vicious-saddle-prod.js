@@ -87,7 +87,7 @@ const VisiousSaddlePage = ({ location }) => {
               For the Pilot boost Our booster will play on your account to get
               you the vicious saddle.
             </p>
-            <DetailLink to="https://discord.gg/jNFDjzx" target="_blank">
+            <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
               Join Discord
             </DetailLink>
             <h4>What is pilot vicious saddle boost?</h4>
