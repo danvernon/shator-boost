@@ -147,7 +147,7 @@ const IndexPage = ({ location }) => {
               about. You can play with the booster (Selfplay boost) or let the
               booster play on your account (Pilot boost).
             </p>
-            <span>Starts from 42€</span>
+            <span>Starts from 39€</span>
             <DetailLink to="/arena-rating">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>
