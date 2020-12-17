@@ -101,13 +101,11 @@ const IconContainer = styled.div`
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  padding-bottom: 50px;
   padding-top: 50px;
 
   @media (min-width: 728px) {
     grid-gap: 100px;
     grid-template-columns: repeat(3, 1fr);
-    padding-bottom: 100px;
     padding-top: 100px;
   }
 `
