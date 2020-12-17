@@ -60,7 +60,7 @@ const ArenaRatingPage = ({ location }) => {
             </p>
             <ContentInnerDetails>
               <DetailLink to="/arena-rating-boost">Buy Now</DetailLink>
-              <DetailPrice>From €42</DetailPrice>
+              <DetailPrice>From €39</DetailPrice>
             </ContentInnerDetails>
             <h4>What is selfplay arena boost?</h4>
             <h6>No risk at all</h6>
@@ -94,7 +94,7 @@ const ArenaRatingPage = ({ location }) => {
               <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
                 Join Discord
               </DetailLink>
-              <DetailPrice>From €42</DetailPrice>
+              <DetailPrice>From €39</DetailPrice>
             </ContentInnerDetails>
             <h4>What is pilot arena boost?</h4>
             <h6>For this service we don’t offer refunds</h6>

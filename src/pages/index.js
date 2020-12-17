@@ -118,7 +118,7 @@ const IndexPage = ({ location }) => {
               warcraft it also will give you many benefits as well as a cool
               mount.
             </p>
-            <span>Starts from 399.99€</span>
+            <span>Starts from 599.99€</span>
             <DetailLink to="/gladiator-boost">See details</DetailLink>
           </BoxText>
           <BoxImage className="image">
