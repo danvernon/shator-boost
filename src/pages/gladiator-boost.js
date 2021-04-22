@@ -62,7 +62,7 @@ const GladiatorBoostPage = ({ location }) => {
               <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
                 Join Discord
               </DetailLink>
-              <DetailPrice>€599.99</DetailPrice>
+              <DetailPrice>€649.99</DetailPrice>
             </ContentInnerDetails>
             <h4>What is pilot gladiator boost?</h4>
             <h6>For this service we don’t offer refunds</h6>

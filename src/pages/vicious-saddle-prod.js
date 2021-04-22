@@ -92,7 +92,7 @@ const VisiousSaddlePage = ({ location }) => {
             </p>
             <ContentInnerDetails>
               <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
-                Join Discord
+                Buy Now
               </DetailLink>
               <DetailPrice>€129.99</DetailPrice>
             </ContentInnerDetails>
