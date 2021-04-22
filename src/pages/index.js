@@ -182,7 +182,7 @@ const IndexPage = ({ location }) => {
               Selfplay or Accplay you can earn Loot, PvP Gear and titles.
             </p>
             <span>Starts from 1999€</span>
-            <DetailLink to="/rank-one">See details</DetailLink>
+            <DetailLink to="/rank-one-account">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>
             <Img fluid={imgRankOne} />
