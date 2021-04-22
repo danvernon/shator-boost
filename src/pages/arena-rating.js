@@ -59,8 +59,8 @@ const ArenaRatingPage = ({ location }) => {
               3v3.
             </p>
             <ContentInnerDetails>
-              <DetailLink to="/arena-rating-boost">Buy Now</DetailLink>
-              <DetailPrice>From €39</DetailPrice>
+              <DetailLink to="/arena-boost-self-play">Buy Now</DetailLink>
+              <DetailPrice>From €109</DetailPrice>
             </ContentInnerDetails>
             <h4>What is selfplay arena boost?</h4>
             <h6>No risk at all</h6>
@@ -91,10 +91,8 @@ const ArenaRatingPage = ({ location }) => {
               your desired rating in 2v2 or 3v3.
             </p>
             <ContentInnerDetails>
-              <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
-                Join Discord
-              </DetailLink>
-              <DetailPrice>From €39</DetailPrice>
+              <DetailLink to="/arena-boost-pilot">Buy Now</DetailLink>
+              <DetailPrice>From €49</DetailPrice>
             </ContentInnerDetails>
             <h4>What is pilot arena boost?</h4>
             <h6>For this service we don’t offer refunds</h6>

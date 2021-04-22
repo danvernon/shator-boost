@@ -99,6 +99,12 @@ const ProductDetail = ({
   })
 
   useEffect(() => {
+    if (attributes.length === 1) {
+      setThird(attributes[0].values[0])
+    }
+  }, [])
+
+  useEffect(() => {
     if (update) {
       setProductId(result.shopifyId)
     }
