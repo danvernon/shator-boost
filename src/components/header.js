@@ -60,7 +60,7 @@ const Header = ({ title }) => {
               <Link to="/vicious-saddle-prod" className="nav-link">
                 Vicious Saddle
               </Link>
-              <Link to="/rank-one-account" className="nav-link">
+              <Link to="/rated-battlegrounds" className="nav-link">
                 Rated Battlegrounds
               </Link>
               <Link to="/faq" className="nav-link">

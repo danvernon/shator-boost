@@ -37,7 +37,7 @@ const Footer = () => {
                 <Link to="/vicious-saddle-prod">Vicious Saddle</Link>
               </li>
               <li>
-                <Link to="/rank-one-account">Rated Battlegrounds</Link>
+                <Link to="/rated-battlegrounds">Rated Battlegrounds</Link>
               </li>
             </ul>
           </div>
