@@ -25,7 +25,7 @@ const Footer = () => {
             <h5>Services</h5>
             <ul>
               <li>
-                <Link to="/gladiator-boost">Gladiator</Link>
+                <Link to="/gladiator-account">Gladiator</Link>
               </li>
               <li>
                 <Link to="/coaching">Coaching</Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                 <Link to="/vicious-saddle-prod">Vicious Saddle</Link>
               </li>
               <li>
-                <Link to="/rank-one-account">Rank One</Link>
+                <Link to="/rank-one-account">Rated Battlegrounds</Link>
               </li>
             </ul>
           </div>

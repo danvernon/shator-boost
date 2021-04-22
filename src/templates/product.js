@@ -82,21 +82,8 @@ const ProductDetail = ({
     setUpdate(Math.random())
   }
 
-  const marks = {
-    0: "1500",
-    1: "1600",
-    2: "1700",
-    3: "1800",
-    4: "1900",
-    5: "2000",
-    6: "2100",
-    7: "2200",
-    8: "2300",
-    9: "2400",
-  }
-
   const handleChange = props => {
-    setThird(marks[props])
+    setThird(attributes[0].values[props])
     setUpdate(Math.random())
   }
 
@@ -139,11 +126,11 @@ const ProductDetail = ({
               <Form.Label>Rating</Form.Label>
               <Slider
                 min={0}
-                max={9}
+                max={attributes[0].values.length - 1}
                 step={1}
                 dots={true}
                 defaultValue={0}
-                marks={marks}
+                marks={attributes[0].values}
                 onChange={props => handleChange(props)}
               />
             </div>

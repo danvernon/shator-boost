@@ -48,7 +48,7 @@ const Header = ({ title }) => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto"></Nav>
             <Links>
-              <Link to="/gladiator-boost" className="nav-link">
+              <Link to="/gladiator-account" className="nav-link">
                 Gladiator
               </Link>
               <Link to="/coaching" className="nav-link">
@@ -61,7 +61,7 @@ const Header = ({ title }) => {
                 Vicious Saddle
               </Link>
               <Link to="/rank-one-account" className="nav-link">
-                Rank One
+                Rated Battlegrounds
               </Link>
               <Link to="/faq" className="nav-link">
                 FAQ

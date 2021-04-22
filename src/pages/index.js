@@ -119,7 +119,7 @@ const IndexPage = ({ location }) => {
               mount.
             </p>
             <span>Starts from 599.99€</span>
-            <DetailLink to="/gladiator-boost">See details</DetailLink>
+            <DetailLink to="/gladiator-account">See details</DetailLink>
           </BoxText>
           <BoxImage className="image">
             <Img fluid={imgGladiatorBoost} />
@@ -181,7 +181,7 @@ const IndexPage = ({ location }) => {
               coaches you can easily refresh your battleground tactics. In
               Selfplay or Accplay you can earn Loot, PvP Gear and titles.
             </p>
-            <span>Starts from 1999€</span>
+            <span>Starts from 43,99€</span>
             <DetailLink to="/rank-one-account">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>

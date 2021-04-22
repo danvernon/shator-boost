@@ -53,41 +53,6 @@ const GladiatorBoostPage = ({ location }) => {
       <Container>
         <Content>
           <ContentInner>
-            <h2>Selfplay</h2>
-            <p>
-              This is the safest option to choose Our booster/s will play with
-              you until you get your Gladiator title and Gladiator mount.
-            </p>
-            <ContentInnerDetails>
-              <DetailLink to="https://discord.gg/BAjygVC" target="_blank">
-                Join Discord
-              </DetailLink>
-              <DetailPrice>€899.99</DetailPrice>
-            </ContentInnerDetails>
-            <h4>What is selfplay gladiator boost?</h4>
-            <h6>No risk at all</h6>
-            <p>
-              We guarantee that there won’t be any risk when buying selfplay
-              gladiator boost. It is 100% safe since you are playing on your own
-              account with the booster/s.
-            </p>
-            <h6>Benefits of selfplay boost</h6>
-            <p>
-              You will be able to learn a lot from our booster. Adapting to
-              their gameplay and the strategies will make you a much better
-              player and you will be more satisfied when buying the Gladiator
-              boost. You will be playing with professionals that will be
-              patient.
-            </p>
-            <h6>Requirements</h6>
-            <p>
-              To buy selfplay gladiator boost you should contact us on the
-              discord. Simply click on the button below the selfplay gladiator
-              boost to join our discord server where you will be contacted by
-              our manager.
-            </p>
-          </ContentInner>
-          <ContentInner>
             <h2>Pilot</h2>
             <p>
               For the Pilot Gladiator boost Our booster will play on your
@@ -118,34 +83,6 @@ const GladiatorBoostPage = ({ location }) => {
               To receive the pilot gladiator boost we will need your account
               information so our booster would log in and play on it until he
               reaches Gladiator.
-            </p>
-          </ContentInner>
-          <ContentInner>
-            <h2>Account</h2>
-            <p>
-              Our booster will create a completely new account. He will play on
-              that account until he reaches Gladiator. Once the order is
-              finished you will receive account info.
-            </p>
-            <ContentInnerDetails>
-              <DetailLink to="/gladiator-account">Buy Now</DetailLink>
-              <DetailPrice>€899.99</DetailPrice>
-            </ContentInnerDetails>
-            <h4>What is gladiator account boost?</h4>
-            <h6>Risk of getting banned</h6>
-            <p>
-              There is a risk of getting banned even for gladiator account
-              boost. Although it is lower chance then on pilot gladiator boost
-              it is still a chance and there won’t be any refund in case the
-              account gets banned.
-            </p>
-            <h6>Customization</h6>
-            <p>You will be able to choose the character’s race, class etc..</p>
-            <h6>No Requirements</h6>
-            <p>
-              You can simply buy through our website. Once you make the payment
-              and fill the info on the checkout page we will contact you on
-              discord.
             </p>
           </ContentInner>
         </Content>
