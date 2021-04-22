@@ -132,7 +132,7 @@ const IndexPage = ({ location }) => {
               Would you want to learn from the best? If you want to improve your
               game in tactical sense we highly suggest you the coaching.
             </p>
-            <span>Starts from 23€</span>
+            <span>Starts from 39€</span>
             <DetailLink to="/coaching">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 300 }}>
@@ -171,11 +171,15 @@ const IndexPage = ({ location }) => {
         </Box>
         <Box>
           <BoxText className="text">
-            <h3>Rank One</h3>
+            <h3>Rated Battlegrounds</h3>
             <p>
-              Our boosters are able to get you to the rating you always dreamt
-              about. You can play with the booster (Selfplay boost) or let the
-              booster play on your account (Pilot boost).
+              Rated Battlegrounds With the Shator Boost you have the best
+              battlefield team in Europe at your side. We shorten your path to
+              success. No matter if your goals in battlegrounds are the
+              achievements Hero of the Alliance or Hero of the Horde, we make
+              your dream come true with a quick boosting. With our German
+              coaches you can easily refresh your battleground tactics. In
+              Selfplay or Accplay you can earn Loot, PvP Gear and titles.
             </p>
             <span>Starts from 1999€</span>
             <DetailLink to="/rank-one">See details</DetailLink>

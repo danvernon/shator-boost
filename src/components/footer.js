@@ -67,9 +67,8 @@ const Footer = () => {
             <h5>Social</h5>
             <IconContainer>
               <Icon>
-                <a href="https://discord.gg/BAjygVC" target="_blank">
-                  <Discord />
-                </a>
+                <Discord />
+                <p>Shator#6666</p>
               </Icon>
               <Icon>
                 <a href="https://www.facebook.com/ShatorBoost" target="_blank">
@@ -82,19 +81,6 @@ const Footer = () => {
                   target="_blank"
                 >
                   <Skype />
-                </a>
-              </Icon>
-              <Icon>
-                <a href="https://www.twitch.tv/shator1" target="_blank">
-                  <Twitch />
-                </a>
-              </Icon>
-              <Icon>
-                <a
-                  href="https://www.youtube.com/channel/UC7DUEneVNjnQl8Nzedv1RSg"
-                  target="_blank"
-                >
-                  <Youtube />
                 </a>
               </Icon>
               <Icon>

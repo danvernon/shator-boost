@@ -42,9 +42,8 @@ const ContactUsPage = ({ location }) => {
             <p>Click the links below to get in touch with us.</p>
             <IconContainer>
               <Icon>
-                <a href="https://discord.gg/BAjygVC" target="_blank">
-                  <Discord />
-                </a>
+                <Discord />
+                <h5>Shator#6666</h5>
               </Icon>
               <Icon>
                 <a href="https://www.facebook.com/ShatorBoost" target="_blank">
@@ -57,19 +56,6 @@ const ContactUsPage = ({ location }) => {
                   target="_blank"
                 >
                   <Skype />
-                </a>
-              </Icon>
-              <Icon>
-                <a href="https://www.twitch.tv/shator1" target="_blank">
-                  <Twitch />
-                </a>
-              </Icon>
-              <Icon>
-                <a
-                  href="https://www.youtube.com/channel/UC7DUEneVNjnQl8Nzedv1RSg"
-                  target="_blank"
-                >
-                  <Youtube />
                 </a>
               </Icon>
               <Icon>
