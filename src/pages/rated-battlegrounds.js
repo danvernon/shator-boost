@@ -61,7 +61,7 @@ const RatedBattleGroundsPage = ({ location }) => {
               <DetailLink to="/rated-battleground-self-play">
                 Buy Now
               </DetailLink>
-              <DetailPrice>From €109.99</DetailPrice>
+              <DetailPrice>From €79.99</DetailPrice>
             </ContentInnerDetails>
             <h4>What is selfplay rated battleground?</h4>
             <h6>No risk at all</h6>
