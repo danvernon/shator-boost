@@ -116,7 +116,15 @@ const ProductDetail = ({
         dangerouslySetInnerHTML={{ __html: description }}
       />
       <p className="woocommerce-product__price">
-        <span>€{Number(price).toFixed(2)}</span>
+        {attributes.length === 1 ? (
+          third ? (
+            <span>€{Number(price).toFixed(2)}</span>
+          ) : (
+            <span />
+          )
+        ) : (
+          <span>€{Number(price).toFixed(2)}</span>
+        )}
       </p>
 
       {attributes && attributes[0]?.name !== "Title" && (
