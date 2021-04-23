@@ -118,7 +118,7 @@ const IndexPage = ({ location }) => {
               warcraft it also will give you many benefits as well as a cool
               mount.
             </p>
-            <span>Starts from 649.99€</span>
+            <span>Starts from €449.99</span>
             <DetailLink to="/gladiator-account">See details</DetailLink>
           </BoxText>
           <BoxImage className="image">
@@ -132,7 +132,7 @@ const IndexPage = ({ location }) => {
               Would you want to learn from the best? If you want to improve your
               game in tactical sense we highly suggest you the coaching.
             </p>
-            <span>Starts from 39€</span>
+            <span>Starts from €39</span>
             <DetailLink to="/coaching">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 300 }}>
@@ -147,7 +147,7 @@ const IndexPage = ({ location }) => {
               about. You can play with the booster (Selfplay boost) or let the
               booster play on your account (Pilot boost).
             </p>
-            <span>Starts from 39€</span>
+            <span>Starts from €48.99</span>
             <DetailLink to="/arena-rating">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>
@@ -162,7 +162,7 @@ const IndexPage = ({ location }) => {
               this service instead of just getting the tokens click on button to
               learn more.
             </p>
-            <span>Starts from 129€</span>
+            <span>Starts from €129</span>
             <DetailLink to="/vicious-saddle-prod">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>
@@ -181,7 +181,7 @@ const IndexPage = ({ location }) => {
               coaches you can easily refresh your battleground tactics. In
               Selfplay or Accplay you can earn Loot, PvP Gear and titles.
             </p>
-            <span>Starts from 43,99€</span>
+            <span>Starts from €43.99</span>
             <DetailLink to="/rated-battlegrounds">See details</DetailLink>
           </BoxText>
           <BoxImage className="image" style={{ maxWidth: 350 }}>
