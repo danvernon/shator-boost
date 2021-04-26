@@ -39,7 +39,7 @@ const VisiousSaddlePage = ({ location }) => {
       <HeaderImageContainer>
         <div className="content">
           <Container>
-            <h1>Vicious Saddle</h1>
+            <h1>Vicious Saddle Boost</h1>
             {/* <p>
               This is the safest option to choose Our booster/s will play with
               you until you get the vicious saddle. It is our most popular boost

@@ -39,7 +39,7 @@ const ArenaRatingPage = ({ location }) => {
       <HeaderImageContainer>
         <div className="content">
           <Container>
-            <h1>Arena Rating</h1>
+            <h1>Arena Rating Boost</h1>
             <p>
               Our boosters are able to get you to the rating you always dreamt
               about. You can play with the booster (Selfplay boost) or let the

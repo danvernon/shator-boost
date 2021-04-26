@@ -39,7 +39,7 @@ const RatedBattleGroundsPage = ({ location }) => {
       <HeaderImageContainer>
         <div className="content">
           <Container>
-            <h1>Rated Battlegrounds</h1>
+            <h1>Rated Battlegrounds Boost</h1>
             <p>
               Our boosters are able to get you to the rating you always dreamt
               about. You can play with the booster (Selfplay boost) or let the
